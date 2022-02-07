@@ -9,6 +9,6 @@ namespace LiveGame.MyCode.Models
     public class ModelCurrentProcesses
     {
         public string ProcesName;
-        public int NumberOf100msRunningProces;
+        public int NumberOf1sRunningProces;
     }
 }

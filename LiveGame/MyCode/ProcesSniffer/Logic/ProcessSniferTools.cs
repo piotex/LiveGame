@@ -18,13 +18,13 @@ namespace LiveGame.MyCode
             {
                 if (listOfProcesses[i].ProcesName == process)
                 {
-                    listOfProcesses[i].NumberOf100msRunningProces ++;
+                    listOfProcesses[i].NumberOf1sRunningProces ++;
                     return;
                 }
             }
             var tmp = new Models.ModelCurrentProcesses()
             {
-                NumberOf100msRunningProces = 1,
+                NumberOf1sRunningProces = 1,
                 ProcesName = process
             };
             listOfProcesses.Add(tmp);
@@ -84,7 +84,7 @@ namespace LiveGame.MyCode
             for (int i = 0; i < listOfProcesses.Count; i++)
             {
                 string title = listOfProcesses[i].ProcesName;
-                int seconds = listOfProcesses[i].NumberOf100msRunningProces / 10;
+                int seconds = listOfProcesses[i].NumberOf1sRunningProces ;
                 DateTime end = lastEventStart;
                 DateTime start = lastEventStart.AddSeconds(-seconds);
 
@@ -100,16 +100,16 @@ namespace LiveGame.MyCode
         //return the 3 largest processes
         public void UpdateListOdProcesses(ref List<ModelCurrentProcesses> listOfProcesses)
         {
-            int time_5min_in_100ms = 5 * 60 * 10;
+            int time_5min_in_1s = 5 * 60;
 
             if (listOfProcesses.Count == 1)
                 return;
 
-            listOfProcesses.Sort((p, q) => q.NumberOf100msRunningProces.CompareTo(p.NumberOf100msRunningProces));
+            listOfProcesses.Sort((p, q) => q.NumberOf1sRunningProces.CompareTo(p.NumberOf1sRunningProces));
 
             for (int i = 0; i < listOfProcesses.Count; i++)
             {
-                if (listOfProcesses[i].NumberOf100msRunningProces < time_5min_in_100ms)
+                if (listOfProcesses[i].NumberOf1sRunningProces < time_5min_in_1s)
                 {
                     listOfProcesses.RemoveAt(i);
                     i--;

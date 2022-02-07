@@ -36,14 +36,13 @@ namespace LiveGame.MyCode
         public void StartSniffer(TextBox textBox)
         {
             List<ModelCurrentProcesses> listOfProcesses = new List<ModelCurrentProcesses>();
+            DateTime timeToSaveData = DateTime.Now.AddHours(1);
 
             var addEvent = new AddEvent();
             var procesCategories = new ProcessCategories();
 
-            int delta_time_ms = 1000;                           // 100 ms
-            int max_time = 60 * 60 * (1000 / delta_time_ms);    // 1h = 60*60*10 [100ms]
+            int delta_time_ms = 1000;                           // 1000 ms == 1s
 
-            int counter = 0;
             string lastProcess = "";
 
             /*
@@ -67,18 +66,17 @@ namespace LiveGame.MyCode
                     UpdateTextBox(textBox, newProcess);
                 }
 
-                if (counter > max_time)
+                if (DateTime.Now > timeToSaveData)
                 {
+                    timeToSaveData.AddHours(1);
                     List<CalendarEvent> listOfEvents = GetListOfLongestProcesses(ref listOfProcesses);
                     foreach (CalendarEvent calendarEvent in listOfEvents)
                     {
                         addEvent.InsertEventToCalendar(calendarEvent.ConvertToGoogleCalendarEvent());
                     }
                     listOfProcesses.Clear();
-                    counter = 0;
                 }
-
-                counter++;
+                
                 UpdateListOfCurrentProcesses(ref listOfProcesses, newProcess);
                 Thread.Sleep(delta_time_ms);
             }
