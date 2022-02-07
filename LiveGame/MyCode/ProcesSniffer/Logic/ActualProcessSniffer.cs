@@ -36,7 +36,7 @@ namespace LiveGame.MyCode
         public void StartSniffer(TextBox textBox)
         {
             List<ModelCurrentProcesses> listOfProcesses = new List<ModelCurrentProcesses>();
-            DateTime timeToSaveData = DateTime.Now.AddHours(1);
+            DateTime timeToSaveData = DateTime.Now.AddMinutes(15);   //AddHours(1);
 
             var addEvent = new AddEvent();
             var procesCategories = new ProcessCategories();
@@ -68,7 +68,7 @@ namespace LiveGame.MyCode
 
                 if (DateTime.Now > timeToSaveData)
                 {
-                    timeToSaveData.AddHours(1);
+                    timeToSaveData = timeToSaveData.AddHours(1);
                     List<CalendarEvent> listOfEvents = GetListOfLongestProcesses(ref listOfProcesses);
                     foreach (CalendarEvent calendarEvent in listOfEvents)
                     {

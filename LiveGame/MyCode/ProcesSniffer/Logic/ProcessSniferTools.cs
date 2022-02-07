@@ -74,9 +74,6 @@ namespace LiveGame.MyCode
         }
         public List<CalendarEvent> GetListOfLongestProcesses(ref List<ModelCurrentProcesses> listOfProcesses)
         {
-            if (listOfProcesses.Count > 0)
-                listOfProcesses.Clear();
-
             List<CalendarEvent> tmp = new List<CalendarEvent>();
             UpdateListOdProcesses(ref listOfProcesses);
 
@@ -93,6 +90,10 @@ namespace LiveGame.MyCode
 
                 tmp.Add(model);
             }
+
+            if (listOfProcesses.Count > 0)
+                listOfProcesses.Clear();
+
             return tmp;
         }
 
