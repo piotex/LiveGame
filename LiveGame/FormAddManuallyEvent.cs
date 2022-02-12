@@ -27,8 +27,7 @@ namespace LiveGame
             DateTime start = DateTime.Now.AddMinutes(-time);
             DateTime end = DateTime.Now;
 
-            CalendarEvent ev = new CalendarEvent(title, start, end);
-            Google.Apis.Calendar.v3.Data.Event google_ev = ev.ConvertToGoogleCalendarEvent();
+            Google.Apis.Calendar.v3.Data.Event google_ev = new CalendarEvent(title, start, end);
 
             AddEvent tmp = new AddEvent();
             tmp.InsertEventToCalendar(google_ev);

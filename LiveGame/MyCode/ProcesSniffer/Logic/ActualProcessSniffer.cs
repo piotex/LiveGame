@@ -36,7 +36,7 @@ namespace LiveGame.MyCode
         public void StartSniffer(TextBox textBox)
         {
             List<ModelCurrentProcesses> listOfProcesses = new List<ModelCurrentProcesses>();
-            DateTime timeToSaveData = DateTime.Now.AddMinutes(15);   //AddHours(1);
+            DateTime timeToSaveData = DateTime.Now.AddHours(1);
 
             var addEvent = new AddEvent();
             var procesCategories = new ProcessCategories();
@@ -72,7 +72,7 @@ namespace LiveGame.MyCode
                     List<CalendarEvent> listOfEvents = GetListOfLongestProcesses(ref listOfProcesses);
                     foreach (CalendarEvent calendarEvent in listOfEvents)
                     {
-                        addEvent.InsertEventToCalendar(calendarEvent.ConvertToGoogleCalendarEvent());
+                        addEvent.InsertEventToCalendar(calendarEvent);
                     }
                     listOfProcesses.Clear();
                 }

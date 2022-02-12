@@ -101,25 +101,23 @@ namespace LiveGame.MyCode
         //return the 3 largest processes
         public void UpdateListOdProcesses(ref List<ModelCurrentProcesses> listOfProcesses)
         {
-            int time_5min_in_1s = 5 * 60;
-
-            if (listOfProcesses.Count == 1)
-                return;
+            int countOfList = 2;
+            int time_15min_in_1s = 15 * 60;
 
             listOfProcesses.Sort((p, q) => q.NumberOf1sRunningProces.CompareTo(p.NumberOf1sRunningProces));
 
             for (int i = 0; i < listOfProcesses.Count; i++)
             {
-                if (listOfProcesses[i].NumberOf1sRunningProces < time_5min_in_1s)
+                if (listOfProcesses[i].NumberOf1sRunningProces < time_15min_in_1s)
                 {
                     listOfProcesses.RemoveAt(i);
                     i--;
                 }
             }
 
-            if (listOfProcesses.Count > 3)
+            if (listOfProcesses.Count > countOfList)
             {
-                listOfProcesses.RemoveRange(3, listOfProcesses.Count - 3);
+                listOfProcesses.RemoveRange(countOfList, listOfProcesses.Count - countOfList);
             }
         }
 

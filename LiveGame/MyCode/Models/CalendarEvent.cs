@@ -7,64 +7,87 @@ using System.Threading.Tasks;
 
 namespace LiveGame.MyCode.Calendar.Models
 {
-    public class CalendarEvent
+    public class CalendarEvent : Event
     {
         private string location = "Wrocław, Polska";
         private string timeZone = "Europe/Zurich";
         private string colourId = "8";
         private string description = "[Auto_Added]";
 
-        public string Title = "";
-        public string Location = "";
-        public string Description = "";
-        public string ColourID = "";
-
-        public DateTime StartTime;
-        public DateTime EndTime;
 
         public CalendarEvent(string _title, string _location, string _description, DateTime _startTime, DateTime _endTime)
         {
-            Title = _title;
+            Summary = _title;
             Location = _location;
             Description = _description;
-            ColourID = colourId;
+            ColorId = colourId;
 
-            StartTime = _startTime;
-            EndTime = _endTime;
-
-
+            Start = new EventDateTime()
+            {
+                DateTime = _startTime,
+                TimeZone = timeZone,
+            };
+            End = new EventDateTime()
+            {
+                DateTime = _endTime,
+                TimeZone = timeZone,
+            };
         }
         public CalendarEvent(string _title, string _description, DateTime _startTime, DateTime _endTime)
         {
-            Title = _title;
+            Summary = _title;
             Location = location;
             Description = _description;
-            ColourID = colourId;
+            ColorId = colourId;
 
-            StartTime = _startTime;
-            EndTime = _endTime;
+            Start = new EventDateTime()
+            {
+                DateTime = _startTime,
+                TimeZone = timeZone,
+            };
+            End = new EventDateTime()
+            {
+                DateTime = _endTime,
+                TimeZone = timeZone,
+            };
         }
         public CalendarEvent(string _title, DateTime _startTime, DateTime _endTime)
         {
-            Title = _title;
+            Summary = _title;
             Location = location;
             Description = description;
-            ColourID = colourId;
+            ColorId = colourId;
 
-            StartTime = _startTime;
-            EndTime = _endTime;
+            Start = new EventDateTime()
+            {
+                DateTime = _startTime,
+                TimeZone = timeZone,
+            };
+            End = new EventDateTime()
+            {
+                DateTime = _endTime,
+                TimeZone = timeZone,
+            };
         }
         public CalendarEvent(string _title)
         {
-            Title = _title;
+            Summary = _title;
             Location = location;
             Description = description;
-            ColourID = colourId;
+            ColorId = colourId;
 
-            StartTime = DateTime.Now;
-            EndTime = DateTime.Now;
+            Start = new EventDateTime()
+            {
+                DateTime = DateTime.Now,
+                TimeZone = timeZone,
+            };
+            End = new EventDateTime()
+            {
+                DateTime = DateTime.Now,
+                TimeZone = timeZone,
+            };
         }
-
+        /*
         public Event ConvertToGoogleCalendarEvent() 
         {
             Event myEvent = new Event();
@@ -85,5 +108,6 @@ namespace LiveGame.MyCode.Calendar.Models
             };
             return myEvent;
         }
+        */
     }
 }
