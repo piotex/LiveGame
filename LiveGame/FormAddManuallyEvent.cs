@@ -1,5 +1,6 @@
 ﻿using LiveGame.MyCode.Calendar.Logic;
 using LiveGame.MyCode.Calendar.Models;
+using LiveGame.MyCode.ProcesSniffer.Categories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,24 +34,28 @@ namespace LiveGame
                 end = DateTime.Now.AddMinutes(time);
             }
 
-            Google.Apis.Calendar.v3.Data.Event google_ev = new CalendarEvent(title, start, end);
+            string colorId = new ProcessCategoriesColor().GetProcessColorId(title);
+            CalendarEvent model = new CalendarEvent(title, start, end, colorId);
 
-            new AddEvent().InsertEventToCalendar(google_ev);
+            new AddEvent().InsertEventToCalendar(model);
 
             CloseForm();
         }
 
         private void CloseForm()
         {
-            int counter = 0;
-            while (checkBox_AutoClose.Checked)
+            if (checkBox_AutoClose.Checked)
             {
-                Thread.Sleep(100);
-                counter++;
-                if (counter > 10)   //1s
-                    break;
+                int counter = 0;
+                while (checkBox_AutoClose.Checked)
+                {
+                    Thread.Sleep(100);
+                    counter++;
+                    if (counter > 10)   //1s
+                        break;
+                }
+                this.Close();
             }
-            this.Close();
         }
     }
 }

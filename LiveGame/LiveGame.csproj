@@ -93,6 +93,7 @@
     <Compile Include="MyCode\Models\ModelCurrentProcesses.cs" />
     <Compile Include="MyCode\ProcesSniffer\Categories\ProcCat_MozillaFirefox.cs" />
     <Compile Include="MyCode\ProcesSniffer\Categories\ProcessCategories.cs" />
+    <Compile Include="MyCode\ProcesSniffer\Categories\ProcessCategoriesColor.cs" />
     <Compile Include="MyCode\ProcesSniffer\Logic\ActualProcessSniffer.cs" />
     <Compile Include="MyCode\ProcesSniffer\Logic\ProcessSniferTools.cs" />
     <Compile Include="Program.cs" />

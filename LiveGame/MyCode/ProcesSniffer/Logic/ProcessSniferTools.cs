@@ -1,5 +1,6 @@
 ﻿using LiveGame.MyCode.Calendar.Models;
 using LiveGame.MyCode.Models;
+using LiveGame.MyCode.ProcesSniffer.Categories;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -86,7 +87,8 @@ namespace LiveGame.MyCode
                 DateTime start = lastEventStart.AddSeconds(-seconds);
 
                 lastEventStart = start;
-                CalendarEvent model = new CalendarEvent(title, start, end);
+                string colorId = new ProcessCategoriesColor().GetProcessColorId(title);
+                CalendarEvent model = new CalendarEvent(title, start, end, colorId);
 
                 tmp.Add(model);
             }
@@ -96,6 +98,7 @@ namespace LiveGame.MyCode
 
             return tmp;
         }
+
 
 
         //return the 3 largest processes
