@@ -27,13 +27,23 @@ namespace LiveGame
             DateTime start = DateTime.Now.AddMinutes(-time);
             DateTime end = DateTime.Now;
 
+            if ( !checkBox_AddBackward.Checked)
+            {
+                start = DateTime.Now;
+                end = DateTime.Now.AddMinutes(time);
+            }
+
             Google.Apis.Calendar.v3.Data.Event google_ev = new CalendarEvent(title, start, end);
 
-            AddEvent tmp = new AddEvent();
-            tmp.InsertEventToCalendar(google_ev);
+            new AddEvent().InsertEventToCalendar(google_ev);
 
+            CloseForm();
+        }
+
+        private void CloseForm()
+        {
             int counter = 0;
-            while (checkBox1.Checked)
+            while (checkBox_AutoClose.Checked)
             {
                 Thread.Sleep(100);
                 counter++;

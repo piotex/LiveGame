@@ -34,7 +34,8 @@ namespace LiveGame
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox_AutoClose = new System.Windows.Forms.CheckBox();
+            this.checkBox_AddBackward = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // textBox1
@@ -86,25 +87,39 @@ namespace LiveGame
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // checkBox1
+            // checkBox_AutoClose
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.checkBox1.Location = new System.Drawing.Point(14, 154);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(106, 24);
-            this.checkBox1.TabIndex = 5;
-            this.checkBox1.Text = "Auto Close";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox_AutoClose.AutoSize = true;
+            this.checkBox_AutoClose.Checked = true;
+            this.checkBox_AutoClose.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_AutoClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.checkBox_AutoClose.Location = new System.Drawing.Point(14, 154);
+            this.checkBox_AutoClose.Name = "checkBox_AutoClose";
+            this.checkBox_AutoClose.Size = new System.Drawing.Size(106, 24);
+            this.checkBox_AutoClose.TabIndex = 5;
+            this.checkBox_AutoClose.Text = "Auto Close";
+            this.checkBox_AutoClose.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_AddBackward
+            // 
+            this.checkBox_AddBackward.AutoSize = true;
+            this.checkBox_AddBackward.Checked = true;
+            this.checkBox_AddBackward.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_AddBackward.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.checkBox_AddBackward.Location = new System.Drawing.Point(14, 124);
+            this.checkBox_AddBackward.Name = "checkBox_AddBackward";
+            this.checkBox_AddBackward.Size = new System.Drawing.Size(131, 24);
+            this.checkBox_AddBackward.TabIndex = 6;
+            this.checkBox_AddBackward.Text = "Add Backward";
+            this.checkBox_AddBackward.UseVisualStyleBackColor = true;
             // 
             // FormAddManuallyEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(446, 190);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.checkBox_AddBackward);
+            this.Controls.Add(this.checkBox_AutoClose);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.button1);
@@ -124,6 +139,7 @@ namespace LiveGame
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox_AutoClose;
+        private System.Windows.Forms.CheckBox checkBox_AddBackward;
     }
 }
