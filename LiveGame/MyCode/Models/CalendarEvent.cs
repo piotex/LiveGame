@@ -18,7 +18,7 @@ namespace LiveGame.MyCode.Calendar.Models
         public CalendarEvent(string _title, DateTime _startTime, DateTime _endTime, string _colorId) 
         {
             Summary = _title;
-            Location = location;
+            //Location = location;
             Description = description;
             ColorId = _colorId;
 
@@ -33,29 +33,5 @@ namespace LiveGame.MyCode.Calendar.Models
                 TimeZone = timeZone,
             };
         }
-
-
-        /*
-public Event ConvertToGoogleCalendarEvent() 
-{
-   Event myEvent = new Event();
-   myEvent.Summary = Title;
-   myEvent.Location = Location;
-   myEvent.Description = Description;
-   myEvent.ColorId = ColourID;
-
-   myEvent.Start = new EventDateTime()
-   {
-       DateTime = StartTime,
-       TimeZone = timeZone,
-   };
-   myEvent.End = new EventDateTime()
-   {
-       DateTime = EndTime,
-       TimeZone = timeZone,
-   };
-   return myEvent;
-}
-*/
     }
 }

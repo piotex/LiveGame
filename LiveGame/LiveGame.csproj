@@ -73,11 +73,23 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAddHabit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddHabit.Designer.cs">
+      <DependentUpon>FormAddHabit.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAddManuallyEvent.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormAddManuallyEvent.Designer.cs">
       <DependentUpon>FormAddManuallyEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_HabitRemainder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_HabitRemainder.Designer.cs">
+      <DependentUpon>Form_HabitRemainder.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_Properties.cs">
       <SubType>Form</SubType>
@@ -87,10 +99,12 @@
     </Compile>
     <Compile Include="MyCode\Calendar\Logic\AddEvent.cs" />
     <Compile Include="MyCode\Calendar\Logic\CalendarClient.cs" />
+    <Compile Include="MyCode\Calendar\Logic\CalendarHabitManager.cs" />
     <Compile Include="MyCode\Models\CalendarEvent.cs" />
     <Compile Include="MyCode\Models\ModelCalendarJsonKey.cs" />
     <Compile Include="MyCode\Calendar\Parameters\CalendarEventParameters.cs" />
     <Compile Include="MyCode\Models\ModelCurrentProcesses.cs" />
+    <Compile Include="MyCode\Models\ModelHabit.cs" />
     <Compile Include="MyCode\ProcesSniffer\Categories\ProcCat_MozillaFirefox.cs" />
     <Compile Include="MyCode\ProcesSniffer\Categories\ProcessCategories.cs" />
     <Compile Include="MyCode\ProcesSniffer\Categories\ProcessCategoriesColor.cs" />
@@ -101,8 +115,14 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAddHabit.resx">
+      <DependentUpon>FormAddHabit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAddManuallyEvent.resx">
       <DependentUpon>FormAddManuallyEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_HabitRemainder.resx">
+      <DependentUpon>Form_HabitRemainder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Properties.resx">
       <DependentUpon>Form_Properties.cs</DependentUpon>

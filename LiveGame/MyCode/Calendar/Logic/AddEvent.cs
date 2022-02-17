@@ -18,7 +18,7 @@ namespace LiveGame.MyCode.Calendar.Logic
     {
         public void InsertEventToCalendar(Event eventToInsert)
         {
-            var recurringEvent = service.Events.Insert(eventToInsert, "primary");
+            EventsResource.InsertRequest recurringEvent = service.Events.Insert(eventToInsert, "primary");
             recurringEvent.SendNotifications = true;
             recurringEvent.Execute();
         }

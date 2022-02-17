@@ -33,7 +33,12 @@ namespace LiveGame.MyCode
             return "-";
         }
 
-        public void StartSniffer(TextBox textBox)
+        public void StartSniffing(TextBox textBox_CurrentTask)
+        {
+            Task task1 = Task.Run(() => _startSniffer(textBox_CurrentTask));
+        }
+
+        private void _startSniffer(TextBox textBox)
         {
             List<ModelCurrentProcesses> listOfProcesses = new List<ModelCurrentProcesses>();
             DateTime timeToSaveData = DateTime.Now.AddHours(1);

@@ -34,7 +34,7 @@ namespace LiveGame.MyCode
 
         public void AddToFile(string process_to_add)
         {
-            string path = @"C:\Users\pkubo\OneDrive\Dokumenty\GitHub\_Files\LiveGame\" + DateTime.Now.ToString("yyyy-MM-dd") + ".txt";
+            string path = @"C:\Users\pkubo\OneDrive\Dokumenty\GitHub\_Files\LiveGame\TasksHistory\" + DateTime.Now.ToString("yyyy-MM-dd") + ".txt";
             List<string> processes = new List<string>();
 
             if (!File.Exists(path))
