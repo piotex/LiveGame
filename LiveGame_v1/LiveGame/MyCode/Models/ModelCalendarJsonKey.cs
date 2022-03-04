@@ -9,7 +9,8 @@ namespace LiveGame.MyCode.Calendar.Models
 	public class ModelCalendarJsonKey
 	{
 		public ModelCalendarJsonKey_SubModel installed { get; set; }
-}
+	}
+
 	public class ModelCalendarJsonKey_SubModel
 	{
 		public string client_id { get; set; } 
